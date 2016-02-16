@@ -16,7 +16,7 @@ public class SoapClient {
 		Ticket ticket = reservation.doReservation(getBusInfo(), getPassengerInfo());
 		System.out.println("Hi your Ticket No:"+ticket.getTicketId()+" was "+ticket.getStatus()+" from "+ticket.getFromAddr()+" to "+ticket.getToAddr());
 		System.out.println("second line");
-		System.out.println("edited from github site");
+		System.out.println("edited from github site12");
 	}
 	
 	//stub methods getBusInfo(),getPassengerInfo()
