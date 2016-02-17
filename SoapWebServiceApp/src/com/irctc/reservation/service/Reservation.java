@@ -13,7 +13,7 @@ import com.irctc.model.Ticket;
 public interface Reservation {
 
 	@WebMethod(operationName = "doReservation",action="http://irctc.org/reservation/wsdl#doReservation")
-	public @WebResult(name = "return", targetNamespace = "http://irctc.org/reservation/types") Ticket doReservation(
+	public @WebResult(name = "result", targetNamespace = "http://irctc.org/reservation/types") Ticket doReservation(
 			@WebParam(name = "bInfo") BusInfo bInfo,
 			@WebParam(name = "pInfo", targetNamespace = "http://irctc.org/reservation/types") PassengerInfo pInfo);
 }

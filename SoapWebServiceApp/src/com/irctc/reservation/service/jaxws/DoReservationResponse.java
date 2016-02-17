@@ -12,25 +12,25 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "doReservationResponse", namespace = "http://irctc.org/reservation/wsdl")
 public class DoReservationResponse {
 
-    @XmlElement(name = "return", namespace = "http://irctc.org/reservation/types")
-    private com.irctc.model.Ticket _return;
+    @XmlElement(name = "result", namespace = "http://irctc.org/reservation/types")
+    private com.irctc.model.Ticket result;
 
     /**
      * 
      * @return
      *     returns Ticket
      */
-    public com.irctc.model.Ticket getReturn() {
-        return this._return;
+    public com.irctc.model.Ticket getResult() {
+        return this.result;
     }
 
     /**
      * 
-     * @param _return
-     *     the value for the _return property
+     * @param result
+     *     the value for the result property
      */
-    public void setReturn(com.irctc.model.Ticket _return) {
-        this._return = _return;
+    public void setResult(com.irctc.model.Ticket result) {
+        this.result = result;
     }
 
 }
