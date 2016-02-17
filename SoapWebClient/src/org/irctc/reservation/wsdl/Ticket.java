@@ -16,7 +16,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="errors" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="fromAddr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="personName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ticketId" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="toAddr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -30,17 +33,55 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ticket", propOrder = {
+    "amount",
+    "errors",
     "fromAddr",
+    "personName",
     "status",
     "ticketId",
     "toAddr"
 })
 public class Ticket {
 
+    protected long amount;
+    protected boolean errors;
     protected String fromAddr;
+    protected String personName;
     protected String status;
     protected int ticketId;
     protected String toAddr;
+
+    /**
+     * Gets the value of the amount property.
+     * 
+     */
+    public long getAmount() {
+        return amount;
+    }
+
+    /**
+     * Sets the value of the amount property.
+     * 
+     */
+    public void setAmount(long value) {
+        this.amount = value;
+    }
+
+    /**
+     * Gets the value of the errors property.
+     * 
+     */
+    public boolean isErrors() {
+        return errors;
+    }
+
+    /**
+     * Sets the value of the errors property.
+     * 
+     */
+    public void setErrors(boolean value) {
+        this.errors = value;
+    }
 
     /**
      * Gets the value of the fromAddr property.
@@ -64,6 +105,30 @@ public class Ticket {
      */
     public void setFromAddr(String value) {
         this.fromAddr = value;
+    }
+
+    /**
+     * Gets the value of the personName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPersonName() {
+        return personName;
+    }
+
+    /**
+     * Sets the value of the personName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPersonName(String value) {
+        this.personName = value;
     }
 
     /**

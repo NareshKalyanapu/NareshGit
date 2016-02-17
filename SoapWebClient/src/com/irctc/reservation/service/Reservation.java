@@ -36,7 +36,7 @@ public interface Reservation {
      *     returns org.irctc.reservation.wsdl.Ticket
      */
     @WebMethod(action = "http://irctc.org/reservation/wsdl#doReservation")
-    @WebResult(targetNamespace = "http://irctc.org/reservation/types")
+    @WebResult(name = "result", targetNamespace = "http://irctc.org/reservation/types")
     @RequestWrapper(localName = "doReservation", targetNamespace = "http://irctc.org/reservation/wsdl", className = "org.irctc.reservation.wsdl.DoReservation")
     @ResponseWrapper(localName = "doReservationResponse", targetNamespace = "http://irctc.org/reservation/wsdl", className = "org.irctc.reservation.wsdl.DoReservationResponse")
     @Action(input = "http://irctc.org/reservation/wsdl#doReservation", output = "http://irctc.org/reservation/wsdl/Reservation/doReservationResponse")

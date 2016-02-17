@@ -26,7 +26,7 @@ import org.irctc.reservation.wsdl.Ticket;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Return_QNAME = new QName("http://irctc.org/reservation/types", "return");
+    private final static QName _Result_QNAME = new QName("http://irctc.org/reservation/types", "result");
     private final static QName _PInfo_QNAME = new QName("http://irctc.org/reservation/types", "pInfo");
 
     /**
@@ -40,9 +40,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Ticket }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://irctc.org/reservation/types", name = "return")
-    public JAXBElement<Ticket> createReturn(Ticket value) {
-        return new JAXBElement<Ticket>(_Return_QNAME, Ticket.class, null, value);
+    @XmlElementDecl(namespace = "http://irctc.org/reservation/types", name = "result")
+    public JAXBElement<Ticket> createResult(Ticket value) {
+        return new JAXBElement<Ticket>(_Result_QNAME, Ticket.class, null, value);
     }
 
     /**
