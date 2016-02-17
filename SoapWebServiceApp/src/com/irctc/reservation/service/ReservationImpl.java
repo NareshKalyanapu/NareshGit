@@ -17,20 +17,29 @@ public class ReservationImpl implements Reservation {
 	@Override
 	public Ticket doReservation(BusInfo bInfo, PassengerInfo pInfo) {
 		
+		
+		
 		if(bInfo != null && pInfo !=null){
-			ticket.setFromAddr(pInfo.getFromAddr());
-			ticket.setToAddr(pInfo.getToAddr());
+			
 			if(getPaymentStatus()){
 				ticket.setStatus("Confirmed");
 				ticket.setTicketId(789120);
+				ticket.setErrors(false);
+				ticket.setFromAddr(pInfo.getFromAddr());
+				ticket.setToAddr(pInfo.getToAddr());
+				ticket.setPersonName(pInfo.getPassengerName());
 			}
-			
-			
+		}
+		else{
+			ticket.setErrors(true);
 		}
 		return ticket;
 	}
 	
+	
+	//should talk to payment component
 	private boolean getPaymentStatus(){
+		//have some serious logic to get payment status
 		return true;
 	}
 
