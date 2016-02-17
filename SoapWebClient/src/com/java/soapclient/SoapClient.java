@@ -14,7 +14,13 @@ public class SoapClient {
 		ReservationImplService service=new ReservationImplService();
 		Reservation reservation= service.getReservationImplPort();
 		Ticket ticket = reservation.doReservation(getBusInfo(), getPassengerInfo());
-		System.out.println("Hi your Ticket No:"+ticket.getTicketId()+" was "+ticket.getStatus()+" from "+ticket.getFromAddr()+" to "+ticket.getToAddr());
+		if(ticket.isErrors()){
+			System.out.println("invalid payment !!!");
+		}
+		else{
+			System.out.println("Hi "+ticket.getPersonName()+" your Ticket No:"+ticket.getTicketId()+" was "+ticket.getStatus()+" from "+ticket.getFromAddr()+" to "+ticket.getToAddr());	
+		}
+		
 		System.out.println("second line");
 		System.out.println("edited from github site");
 	}
